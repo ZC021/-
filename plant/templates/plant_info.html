@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Info</title>
+</head>
+<body>
+    {% if plant_info %}
+        <h1>{{ plant_name }} Information</h1>
+        <p><strong>습도:</strong> {{ plant_info['습도'] }}</p>
+        <p><strong>온도:</strong> {{ plant_info['온도'] }}</p>
+        <p><strong>토양 습도:</strong> {{ plant_info['토양 습도'] }}</p>
+        <p><strong>토양 비율:</strong> {{ plant_info['토양 비율'] }}</p>
+    {% else %}
+        <h1>Error</h1>
+        <p>해당하는 식물 정보가 없습니다.</p>
+    {% endif %}
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+</body>
+</html>
